@@ -44,7 +44,6 @@
   left: 680px;
   background-image: url(img/cactus.png);
   background-size: 20px 40px;
-  animation: block 1.5s linear infinite;
 }
 @keyframes block {
   0% {
@@ -57,7 +56,7 @@
 h3 {
   text-align: center;
 }
-#text {
+#space-to-play {
   text-align: center;
   margin-top: 10px;
 }

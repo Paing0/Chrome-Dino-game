@@ -3,6 +3,17 @@ let cactus = document.getElementById("cactus");
 let h2 = document.querySelector("#game-over");
 let retryText = document.querySelector("#retry");
 let score = document.querySelector("#score");
+let spaceToPlay = document.querySelector("#space-to-play");
+
+let startGame = () => {
+  spaceToPlay.textContent = "Press space to play";
+  document.addEventListener("keydown", (e) => {
+    if (e.code == "Space") {
+      cactus.style.animation = "block 1.5s linear infinite";
+      jump();
+    }
+  });
+};
 
 function jump() {
   if (dino.classList != "jump") {
@@ -27,12 +38,6 @@ let isAlive = setInterval(() => {
   }
 });
 
-document.addEventListener("keydown", (e) => {
-  if (e.code == "Space") {
-    jump();
-  }
-});
-
 const gameOver = () => {
   h2.textContent = "Game Over!";
   retryText.textContent = "Press space to retry";
@@ -50,3 +55,5 @@ const retry = () => {
     }
   });
 };
+
+startGame();
